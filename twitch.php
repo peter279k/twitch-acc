@@ -24,10 +24,13 @@
 			SendData($sock, "NICK " . $config['nick'] . "\r\n");
 			SendData($sock, "USER " . $config['nick'] . "\r\n");
 			SendData($sock, "JOIN " . $config['channel'] . "\r\n");
-			SendData($sock, "PONG :tmi.twitch.tv" . "\r\n");
-			while(1) {
-				echo fread($sock, 4096);
-				flush();
+			while (!feof($sock) || !$sock) {
+				$str = fread($sock, 4096);
+				echo $str;
+				if(stristr($str, "PING") !== false) {
+					echo "PONG :tmi.twitch.tv\r\n";
+					SendData($sock, "PONG :tmi.twitch.tv" . "\r\n");
+				}
 			}
 		}
 
