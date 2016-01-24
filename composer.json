@@ -1,5 +1,5 @@
 {
     "require": {
-		"phergie/phergie-irc-connection": "~2"
+		"ritero/twitch-sdk":"~1.0"
     }
 }
