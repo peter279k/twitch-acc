@@ -23,9 +23,8 @@
 			SendData($sock, "NICK " . $config['nick'] . "\r\n");
 			SendData($sock, "USER " . $config['nick'] . "\r\n");
 			SendData($sock, "JOIN " . $config['channel'] . "\r\n");
-			SendData($sock, "PRIVMSG #" . $config['channel'] . " :" . "Hello dreamhacksc2" . "\r\n");
 			while (!feof($sock)) {
-				echo fgets($sock, 128);
+				echo fgets($sock, 4096);
 			}
 		}
 
