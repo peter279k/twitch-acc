@@ -1,7 +1,5 @@
 <?php
-	require 'vendor/ritero/twitch-sdk/src/ritero/SDK/TwitchTV/TwitchSDK.php';
-	require 'vendor/ritero/twitch-sdk/src/ritero/SDK/TwitchTV/TwitchException.php';
-
+	require "vendor/autoload.php";
 	use \ritero\SDK\TwitchTV\TwitchSDK;
 	use \ritero\SDK\TwitchTV\TwitchException;
 ?>
