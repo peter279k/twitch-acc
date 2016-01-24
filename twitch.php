@@ -24,8 +24,7 @@
 			SendData($sock, "USER " . $config['nick'] . "\r\n");
 			SendData($sock, "JOIN " . $config['channel'] . "\r\n");
 			SendData($sock, "PONG :tmi.twitch.tv" . "\r\n");
-			while (!feof($sock)) {
-				//echo fgets($sock, 4096);
+			while(1) {
 				echo fread($sock, 4096);
 			}
 		}
