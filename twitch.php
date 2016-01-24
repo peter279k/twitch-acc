@@ -5,7 +5,7 @@
 		$config = array(
 			'server'  => 'irc.twitch.tv',
 			'port'    => 6667, 
-			'channel' => 'kamiyu666',
+			'channel' => 'dreamhacksc2',
 			'name'    => 'peter279k', 
 			'nick'    => 'peter279k', 
 			'pass'    => 'oauth:' . $token["access_token"] //http://twitchapps.com/tmi/
@@ -23,7 +23,7 @@
 			SendData($sock, "NICK " . $config['nick'] . "\r\n");
 			SendData($sock, "USER " . $config['nick'] . "\r\n");
 			SendData($sock, "JOIN " . $config['channel'] . "\r\n");
-			SendData($sock, "PRIVMSG #" . $config['channel'] . " :" . "Sending message from socket" . "\r\n");
+			SendData($sock, "PRIVMSG #" . $config['channel'] . " :" . "Hello dreamhacksc2" . "\r\n");
 			while (!feof($sock)) {
 				echo fgets($sock, 128);
 			}
