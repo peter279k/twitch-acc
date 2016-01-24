@@ -1,4 +1,5 @@
 <?php
+	set_time_limit(0);
 	function IRCBot()
 	{
 		$token = json_decode(file_get_contents("pass.txt"), true);
@@ -26,6 +27,7 @@
 			SendData($sock, "PONG :tmi.twitch.tv" . "\r\n");
 			while(1) {
 				echo fread($sock, 4096);
+				flush();
 			}
 		}
 
