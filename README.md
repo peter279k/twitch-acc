@@ -5,7 +5,9 @@ twitch-acc demo
 
 auth.php → demo authLogin via Twitch REST API.
 
-twitch.php　→ Twitch IRC client
+twitch.php　→ Twitch IRC client (receive irc message)
+
+send.php → Twitch IRC client (send irc message)
 
 I forked the project and  modified the Twitch-SDK libraries. You can replace the /path/toTwitch-SDK/src/ritero/SDK/TwitchTV/TwitchSDK.php
 with the previous TwitchSDK.php
